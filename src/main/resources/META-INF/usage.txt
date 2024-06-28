@@ -1,0 +1,16 @@
+# Locale Change for Spring Boot Starter
+# Copyright (c) 2022 Yookue Ltd. All rights reserved.
+# https://yookue.com
+
+
+spring:
+    locale-change:
+        model-and-view:
+            tag-names:
+                'en-US': 'English'
+                'zh-CN': '简体中文'
+                'zh-TW': '繁体中文'
+        locale-interceptor:
+            param-name: 'lang'
+        cookie-locale-resolver:
+            cookie-http-only: true
