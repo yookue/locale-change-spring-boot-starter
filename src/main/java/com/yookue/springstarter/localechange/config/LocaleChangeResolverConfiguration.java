@@ -94,6 +94,7 @@ public class LocaleChangeResolverConfiguration {
          * @see org.springframework.web.servlet.i18n.CookieLocaleResolver
          */
         @Bean(name = DispatcherServlet.LOCALE_RESOLVER_BEAN_NAME)
+        @ConditionalOnProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX + ".cookie-locale-resolver", name = "cookie-name")
         @ConditionalOnMissingBean(name = DispatcherServlet.LOCALE_RESOLVER_BEAN_NAME)
         public LocaleContextResolver localeContextResolver(@Nonnull LocaleChangeProperties properties) {
             CookieLocaleContextResolver resolver = new CookieLocaleContextResolver();
@@ -103,10 +104,9 @@ public class LocaleChangeResolverConfiguration {
             StringUtilsWraps.ifNotBlank(props.getCookiePath(), resolver::setCookiePath);
             StringUtilsWraps.ifNotBlank(props.getCookieDomain(), resolver::setCookieDomain);
             Optional.ofNullable(props.getMaxAge()).ifPresent(resolver::setCookieMaxAge);
-            props.setHttpOnly(BooleanUtils.isTrue(props.getHttpOnly()));
-            props.setSecureProtocol(BooleanUtils.isTrue(props.getSecureProtocol()));
-            props.setBcp47Compliant(BooleanUtils.isTrue(props.getBcp47Compliant()));
-            props.setRejectInvalid(BooleanUtils.isTrue(props.getRejectInvalid()));
+            resolver.setCookieHttpOnly(BooleanUtils.isTrue(props.getHttpOnly()));
+            resolver.setCookieSecure(BooleanUtils.isTrue(props.getSecureProtocol()));
+            resolver.setRejectInvalidCookies(BooleanUtils.isTrue(props.getRejectInvalid()));
             Optional.ofNullable(props.getDefaultLocale()).ifPresent(resolver::setDefaultLocale);
             Optional.ofNullable(props.getDefaultTimeZone()).ifPresent(resolver::setDefaultTimeZone);
             return resolver;

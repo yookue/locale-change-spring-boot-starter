@@ -265,13 +265,6 @@ public class LocaleChangeProperties implements Serializable {
         private Boolean secureProtocol = false;
 
         /**
-         * Indicates whether this resolver's cookies should be compliant with BCP-47 language tags instead of Java's legacy locale specification format or not
-         * <p>
-         * Default is {@code true}
-         */
-        private Boolean bcp47Compliant = true;
-
-        /**
          * Indicates whether to reject cookies with invalid content (e.g. invalid format) or not
          * <p>
          * Default is {@code true}

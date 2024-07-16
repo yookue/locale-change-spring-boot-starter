@@ -47,7 +47,6 @@ public class CookieLocaleContextResolver extends CookieLocaleResolver {
 
     public CookieLocaleContextResolver() {
         super.setCookieName(SpringAttributeConst.LOCALE_RESOLVER_LOCALE);
-        super.setCookieHttpOnly(true);
     }
 
     @Nonnull
