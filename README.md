@@ -36,7 +36,7 @@ spring:
                 - '/foo/**'
                 - '/bar/**'
         cookie-locale-resolver:
-            cookie-http-only: true
+            http-only: true
 ```
 
 - **Optional feature**: If you want to display the `tag-names` value in multilingual (not the fixed value in `application.properties`), for example, display the value of `zh-CN` to `简体中文` when current request is using `zh` locale, or display `Simplified Chinese` when the request is using `en` locale. You can reach your goal as following:
@@ -76,7 +76,7 @@ Under the `body` segment:
 
 ## Requirement
 
-- jdk 1.8+
+- jdk 17+
 
 ## License
 

@@ -18,15 +18,14 @@ package com.yookue.springstarter.localechange.resolver;
 
 
 import java.util.Locale;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.SimpleLocaleContext;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import com.yookue.commonplexus.javaseutil.constant.StringVariantConst;
-import com.yookue.commonplexus.springutil.constant.SpringAttributeConst;
 import com.yookue.commonplexus.springutil.util.WebUtilsWraps;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,11 +42,12 @@ import lombok.Setter;
 @Setter
 @SuppressWarnings("unused")
 public class CookieLocaleContextResolver extends CookieLocaleResolver {
+    private final String cookieName;
     private String paramName = StringVariantConst.LANG;
 
-    public CookieLocaleContextResolver() {
-        super.setCookieName(SpringAttributeConst.LOCALE_RESOLVER_LOCALE);
-        super.setCookieHttpOnly(true);
+    public CookieLocaleContextResolver(@Nonnull String cookieName) {
+        super(cookieName);
+        this.cookieName = cookieName;
     }
 
     @Nonnull
@@ -85,6 +85,6 @@ public class CookieLocaleContextResolver extends CookieLocaleResolver {
 
     @Nullable
     private Locale getLocaleFromCookie(@Nonnull HttpServletRequest request) {
-        return WebUtilsWraps.getLocaleFromCookie(request, super.getCookieName());
+        return WebUtilsWraps.getLocaleFromCookie(request, cookieName);
     }
 }

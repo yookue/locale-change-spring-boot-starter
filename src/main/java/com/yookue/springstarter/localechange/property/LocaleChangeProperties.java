@@ -18,6 +18,7 @@ package com.yookue.springstarter.localechange.property;
 
 
 import java.io.Serializable;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -238,7 +239,7 @@ public class LocaleChangeProperties implements Serializable {
         /**
          * Specifies a path for the cookie
          */
-        private String cookiePath = org.springframework.web.servlet.i18n.CookieLocaleResolver.DEFAULT_COOKIE_PATH;
+        private String cookiePath;
 
         /**
          * Specifies the domain name of cookie
@@ -255,9 +256,9 @@ public class LocaleChangeProperties implements Serializable {
         /**
          * Specifies the maximum age of the cookie in seconds
          * <p>
-         * If negative, means the cookie is not stored; if zero, deletes the cookie
+         * By default, this is set to -1 in which case the cookie persists until browser shutdown
          */
-        private Integer maxAge;
+        private Duration maxAge;
 
         /**
          * Indicates whether the cookie should only be sent using a secure protocol, such as HTTPS (SSL)

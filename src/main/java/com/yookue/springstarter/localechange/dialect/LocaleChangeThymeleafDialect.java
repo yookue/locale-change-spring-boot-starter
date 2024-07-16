@@ -17,7 +17,7 @@
 package com.yookue.springstarter.localechange.dialect;
 
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.thymeleaf.dialect.AbstractDialect;
 import org.thymeleaf.dialect.IExpressionObjectDialect;
 import org.thymeleaf.expression.IExpressionObjectFactory;
@@ -27,7 +27,7 @@ import lombok.Setter;
 
 
 /**
- * {@link org.thymeleaf.dialect.IExpressionObjectDialect} for localechange
+ * {@link org.thymeleaf.dialect.IExpressionObjectDialect} for locale change
  *
  * @author David Hsing
  */

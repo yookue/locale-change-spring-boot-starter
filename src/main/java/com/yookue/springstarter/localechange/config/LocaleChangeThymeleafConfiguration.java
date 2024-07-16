@@ -17,7 +17,7 @@
 package com.yookue.springstarter.localechange.config;
 
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -51,12 +51,11 @@ public class LocaleChangeThymeleafConfiguration implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(@Nonnull Object bean, @Nonnull String beanName) throws BeansException {
-        if (bean instanceof TemplateEngine) {
+        if (bean instanceof TemplateEngine instance) {
             LocaleChangeTagObserver observer = new LocaleChangeTagObserver(properties);
             LocaleChangeExpressionFactory factory = new LocaleChangeExpressionFactory(observer);
             LocaleChangeThymeleafDialect dialect = new LocaleChangeThymeleafDialect(factory);
-            TemplateEngine engine = (TemplateEngine) bean;
-            engine.addDialect(dialect);
+            instance.addDialect(dialect);
         }
         return bean;
     }

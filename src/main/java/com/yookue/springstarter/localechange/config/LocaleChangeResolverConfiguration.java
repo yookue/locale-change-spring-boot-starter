@@ -18,7 +18,7 @@ package com.yookue.springstarter.localechange.config;
 
 
 import java.util.Optional;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -94,19 +94,18 @@ public class LocaleChangeResolverConfiguration {
          * @see org.springframework.web.servlet.i18n.CookieLocaleResolver
          */
         @Bean(name = DispatcherServlet.LOCALE_RESOLVER_BEAN_NAME)
+        @ConditionalOnProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX + ".cookie-locale-resolver", name = "cookie-name")
         @ConditionalOnMissingBean(name = DispatcherServlet.LOCALE_RESOLVER_BEAN_NAME)
         public LocaleContextResolver localeContextResolver(@Nonnull LocaleChangeProperties properties) {
-            CookieLocaleContextResolver resolver = new CookieLocaleContextResolver();
+            CookieLocaleContextResolver resolver = new CookieLocaleContextResolver(properties.getCookieLocaleResolver().getCookieName());
             resolver.setParamName(properties.getLocaleInterceptor().getParamName());
             LocaleChangeProperties.CookieLocaleResolver props = properties.getCookieLocaleResolver();
-            StringUtilsWraps.ifNotBlank(props.getCookieName(), resolver::setCookieName);
             StringUtilsWraps.ifNotBlank(props.getCookiePath(), resolver::setCookiePath);
             StringUtilsWraps.ifNotBlank(props.getCookieDomain(), resolver::setCookieDomain);
             Optional.ofNullable(props.getMaxAge()).ifPresent(resolver::setCookieMaxAge);
-            props.setHttpOnly(BooleanUtils.isTrue(props.getHttpOnly()));
-            props.setSecureProtocol(BooleanUtils.isTrue(props.getSecureProtocol()));
-            props.setBcp47Compliant(BooleanUtils.isTrue(props.getBcp47Compliant()));
-            props.setRejectInvalid(BooleanUtils.isTrue(props.getRejectInvalid()));
+            resolver.setCookieHttpOnly(BooleanUtils.isTrue(props.getHttpOnly()));
+            resolver.setCookieSecure(BooleanUtils.isTrue(props.getSecureProtocol()));
+            resolver.setRejectInvalidCookies(BooleanUtils.isTrue(props.getRejectInvalid()));
             Optional.ofNullable(props.getDefaultLocale()).ifPresent(resolver::setDefaultLocale);
             Optional.ofNullable(props.getDefaultTimeZone()).ifPresent(resolver::setDefaultTimeZone);
             return resolver;

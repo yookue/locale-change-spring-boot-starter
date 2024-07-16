@@ -19,7 +19,7 @@ package com.yookue.springstarter.localechange.support;
 
 import java.util.Collection;
 import java.util.Locale;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import com.yookue.commonplexus.javaseutil.util.LocalePlainWraps;
 import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
 import lombok.RequiredArgsConstructor;

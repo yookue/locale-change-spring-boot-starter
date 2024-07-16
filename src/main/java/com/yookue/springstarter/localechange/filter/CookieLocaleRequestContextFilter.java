@@ -19,11 +19,11 @@ package com.yookue.springstarter.localechange.filter;
 
 import java.io.IOException;
 import java.util.Locale;
-import javax.annotation.Nonnull;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.annotation.Nonnull;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
@@ -41,7 +41,7 @@ import lombok.Setter;
 
 
 /**
- * {@link javax.servlet.Filter} for detecting locale from cookies, and setting up request context
+ * {@link jakarta.servlet.Filter} for detecting locale from cookies, and setting up request context
  *
  * @author David Hsing
  * @see org.springframework.web.filter.RequestContextFilter

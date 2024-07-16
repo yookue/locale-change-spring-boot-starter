@@ -19,13 +19,11 @@ package com.yookue.springstarter.localechange.factory;
 
 import java.util.Collections;
 import java.util.Set;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import org.thymeleaf.context.IExpressionContext;
 import org.thymeleaf.expression.IExpressionObjectFactory;
 import com.yookue.springstarter.localechange.support.LocaleChangeTagObserver;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 
 /**
@@ -33,11 +31,8 @@ import lombok.RequiredArgsConstructor;
  *
  * @author David Hsing
  */
-@RequiredArgsConstructor
-@Getter
-public class LocaleChangeExpressionFactory implements IExpressionObjectFactory {
+public record LocaleChangeExpressionFactory(LocaleChangeTagObserver observer) implements IExpressionObjectFactory {
     private static final String EXPRESSION_NAME = "localeChange";    // $NON-NLS-1$
-    private final LocaleChangeTagObserver observer;
 
     @Override
     public Object buildObject(@Nullable IExpressionContext context, @Nullable String expression) {
