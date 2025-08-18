@@ -19,8 +19,8 @@ package com.yookue.springstarter.localechange.config;
 
 import java.util.Optional;
 import jakarta.annotation.Nonnull;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -42,7 +42,7 @@ import lombok.RequiredArgsConstructor;
  * @author David Hsing
  */
 @Configuration
-@ConditionalOnProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBooleanProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 @EnableConfigurationProperties(value = LocaleChangeProperties.class)
 @RequiredArgsConstructor

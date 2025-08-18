@@ -21,13 +21,14 @@ import jakarta.annotation.Nonnull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.Thymeleaf;
+import com.yookue.commonplexus.springcondition.annotation.ConditionalOnAllBooleanProperties;
 import com.yookue.springstarter.localechange.dialect.LocaleChangeThymeleafDialect;
 import com.yookue.springstarter.localechange.factory.LocaleChangeExpressionFactory;
 import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
@@ -41,7 +42,10 @@ import lombok.RequiredArgsConstructor;
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX, name = {"enabled", "thymeleaf-dialect"}, havingValue = "true", matchIfMissing = true)
+@ConditionalOnAllBooleanProperties(value = {
+    @ConditionalOnBooleanProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true),
+    @ConditionalOnBooleanProperty(prefix = LocaleChangeViewConfiguration.PROPERTIES_PREFIX, name = "thymeleaf-dialect", matchIfMissing = true)
+})
 @ConditionalOnClass(value = Thymeleaf.class)
 @EnableConfigurationProperties(value = LocaleChangeProperties.class)
 @RequiredArgsConstructor
