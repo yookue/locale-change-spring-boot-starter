@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.property;
+package cn.unikue.springstarter.localechange.property;
 
 
 import java.io.Serializable;
@@ -27,11 +27,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import com.yookue.commonplexus.javaseutil.constant.StringVariantConst;
-import com.yookue.commonplexus.springutil.constant.AntPathConst;
-import com.yookue.commonplexus.springutil.constant.SpringAttributeConst;
-import com.yookue.springstarter.localechange.config.LocaleChangeViewConfiguration;
-import com.yookue.springstarter.localechange.enumeration.LocaleResolverType;
+import cn.unikue.commonplexus.javaseutil.constant.StringVariantConst;
+import cn.unikue.commonplexus.springutil.constant.AntPathConst;
+import cn.unikue.commonplexus.springutil.constant.SpringAttributeConst;
+import cn.unikue.springstarter.localechange.config.LocaleChangeViewConfiguration;
+import cn.unikue.springstarter.localechange.enumeration.LocaleResolverType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -99,7 +99,7 @@ public class LocaleChangeProperties implements Serializable {
      *
      * @author David Hsing
      * @see org.springframework.web.servlet.ModelAndView
-     * @see com.yookue.springstarter.localechange.interceptor.LocaleChangeViewInterceptor
+     * @see cn.unikue.springstarter.localechange.interceptor.LocaleChangeViewInterceptor
      */
     @Getter
     @Setter
@@ -187,7 +187,7 @@ public class LocaleChangeProperties implements Serializable {
      * Properties for cookie locale filter
      *
      * @author David Hsing
-     * @see com.yookue.springstarter.localechange.filter.CookieLocaleRequestContextFilter
+     * @see cn.unikue.springstarter.localechange.filter.CookieLocaleRequestContextFilter
      */
     @Getter
     @Setter

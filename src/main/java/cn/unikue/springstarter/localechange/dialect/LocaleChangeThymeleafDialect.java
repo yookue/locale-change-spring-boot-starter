@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.dialect;
+package cn.unikue.springstarter.localechange.dialect;
 
 
 import jakarta.annotation.Nonnull;
 import org.thymeleaf.dialect.AbstractDialect;
 import org.thymeleaf.dialect.IExpressionObjectDialect;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import com.yookue.springstarter.localechange.factory.LocaleChangeExpressionFactory;
+import cn.unikue.springstarter.localechange.factory.LocaleChangeExpressionFactory;
 import lombok.Getter;
 import lombok.Setter;
 

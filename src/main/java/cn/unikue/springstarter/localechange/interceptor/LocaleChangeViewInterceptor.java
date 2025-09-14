@@ -1,14 +1,14 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
- * Yookue Confidential
+ * Unikue Confidential
  *
  * The source code for this program is not published or otherwise
  * divested of its trade secrets, irrespective of what has been
  * deposited with the National Copyright Administration of China.
  */
 
-package com.yookue.springstarter.localechange.interceptor;
+package cn.unikue.springstarter.localechange.interceptor;
 
 
 import java.util.LinkedHashMap;
@@ -25,10 +25,10 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import com.yookue.commonplexus.javaseutil.util.MapPlainWraps;
-import com.yookue.commonplexus.springutil.util.MessageSourceWraps;
-import com.yookue.commonplexus.springutil.util.WebUtilsWraps;
-import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
+import cn.unikue.commonplexus.javaseutil.util.MapPlainWraps;
+import cn.unikue.commonplexus.springutil.util.MessageSourceWraps;
+import cn.unikue.commonplexus.springutil.util.WebUtilsWraps;
+import cn.unikue.springstarter.localechange.property.LocaleChangeProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 

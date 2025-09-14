@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.support;
+package cn.unikue.springstarter.localechange.support;
 
 
 import java.util.Collection;
 import java.util.Locale;
 import jakarta.annotation.Nullable;
-import com.yookue.commonplexus.javaseutil.util.LocalePlainWraps;
-import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
+import cn.unikue.commonplexus.javaseutil.util.LocalePlainWraps;
+import cn.unikue.springstarter.localechange.property.LocaleChangeProperties;
 import lombok.RequiredArgsConstructor;
 
 

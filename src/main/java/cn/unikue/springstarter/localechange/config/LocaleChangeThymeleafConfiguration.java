@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.config;
+package cn.unikue.springstarter.localechange.config;
 
 
 import jakarta.annotation.Nonnull;
@@ -28,11 +28,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.Thymeleaf;
-import com.yookue.commonplexus.springcondition.annotation.ConditionalOnAllBooleanProperties;
-import com.yookue.springstarter.localechange.dialect.LocaleChangeThymeleafDialect;
-import com.yookue.springstarter.localechange.factory.LocaleChangeExpressionFactory;
-import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
-import com.yookue.springstarter.localechange.support.LocaleChangeTagObserver;
+import cn.unikue.commonplexus.springcondition.annotation.ConditionalOnAllBooleanProperties;
+import cn.unikue.springstarter.localechange.dialect.LocaleChangeThymeleafDialect;
+import cn.unikue.springstarter.localechange.factory.LocaleChangeExpressionFactory;
+import cn.unikue.springstarter.localechange.property.LocaleChangeProperties;
+import cn.unikue.springstarter.localechange.support.LocaleChangeTagObserver;
 import lombok.RequiredArgsConstructor;
 
 

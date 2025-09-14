@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2016 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.config;
+package cn.unikue.springstarter.localechange.config;
 
 
 import java.util.Optional;
@@ -41,13 +41,13 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
-import com.yookue.commonplexus.javaseutil.util.CollectionPlainWraps;
-import com.yookue.commonplexus.javaseutil.util.MapPlainWraps;
-import com.yookue.commonplexus.javaseutil.util.StringUtilsWraps;
-import com.yookue.commonplexus.springutil.constant.SpringBeanConst;
-import com.yookue.springstarter.localechange.filter.CookieLocaleRequestContextFilter;
-import com.yookue.springstarter.localechange.property.LocaleChangeProperties;
-import com.yookue.springstarter.localechange.resolver.CookieLocaleContextResolver;
+import cn.unikue.commonplexus.javaseutil.util.CollectionPlainWraps;
+import cn.unikue.commonplexus.javaseutil.util.MapPlainWraps;
+import cn.unikue.commonplexus.javaseutil.util.StringUtilsWraps;
+import cn.unikue.commonplexus.springutil.constant.SpringBeanConst;
+import cn.unikue.springstarter.localechange.filter.CookieLocaleRequestContextFilter;
+import cn.unikue.springstarter.localechange.property.LocaleChangeProperties;
+import cn.unikue.springstarter.localechange.resolver.CookieLocaleContextResolver;
 
 
 /**

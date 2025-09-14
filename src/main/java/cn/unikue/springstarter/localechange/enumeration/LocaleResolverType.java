@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.localechange.enumeration;
+package cn.unikue.springstarter.localechange.enumeration;
 
 
-import com.yookue.commonplexus.javaseutil.enumeration.ValueEnum;
+import cn.unikue.commonplexus.javaseutil.enumeration.ValueEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
